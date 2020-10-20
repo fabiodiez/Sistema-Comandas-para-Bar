@@ -8044,11 +8044,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteFrontEnd\\TesteFrontEnd\\TesteFrontEnd.csproj",
+      "projectUniqueName": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteFrontEnd\\TesteFrontEnd\\TesteFrontEnd.csproj",
       "projectName": "TesteFrontEnd",
-      "projectPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteFrontEnd\\TesteFrontEnd\\TesteFrontEnd.csproj",
+      "projectPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteFrontEnd\\TesteFrontEnd\\TesteFrontEnd.csproj",
       "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteFrontEnd\\TesteFrontEnd\\obj\\",
+      "outputPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteFrontEnd\\TesteFrontEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

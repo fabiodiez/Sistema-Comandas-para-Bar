@@ -8,7 +8,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace TesteBarClearSale.Models
 {
     public class Produto
-    {
+    {   
+        public Produto()
+        {
+
+        }
         public Produto(string descricao, decimal valor, int? limiteporcomanda)
         {
             Descricao = descricao;

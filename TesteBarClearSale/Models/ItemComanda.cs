@@ -9,6 +9,10 @@ namespace TesteBarClearSale.Models
 {
     public class ItemComanda
     {
+        public ItemComanda()
+        {
+
+        }
         public ItemComanda(int comandaid, int produtoid, decimal valorunit, int qtd)
         {
             ComandaId = comandaid;

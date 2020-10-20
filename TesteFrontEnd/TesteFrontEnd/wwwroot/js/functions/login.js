@@ -27,10 +27,12 @@ function login() {
             location.href = "/Comandas";
         },
         error: function (x, exception) {
-            if (k == "responseText") {
-                response = JSON.parse(x[k]);
-                alert(response.message);
-            }
+            Object.keys(x).forEach(function (k) {
+                if (k == "responseText") {
+                    response = JSON.parse(x[k]);
+                    alert(response.message);
+                }
+            });
         }
     });
 }

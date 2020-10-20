@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteBarClearSale\\TesteBarClearSale.csproj": {}
+    "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteBarClearSale\\TesteBarClearSale.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteBarClearSale\\TesteBarClearSale.csproj": {
+    "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteBarClearSale\\TesteBarClearSale.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteBarClearSale\\TesteBarClearSale.csproj",
+        "projectUniqueName": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteBarClearSale\\TesteBarClearSale.csproj",
         "projectName": "TesteBarClearSale",
-        "projectPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteBarClearSale\\TesteBarClearSale.csproj",
+        "projectPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteBarClearSale\\TesteBarClearSale.csproj",
         "packagesPath": "C:\\Users\\fabio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteBarClearSale\\obj\\",
+        "outputPath": "C:\\Users\\fabio\\source\\repos\\TesteBarClearSale\\TesteDgBar\\TesteBarClearSale\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

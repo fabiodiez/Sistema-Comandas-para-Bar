@@ -10,6 +10,10 @@ namespace TesteBarClearSale.Models
 {
     public class Comanda
     {
+        public Comanda()
+        {
+
+        }
         public Comanda(int codigoComanda, eStatusComanda statuscomanda, ItemComanda itemcomanda) {
             CodigoComanda = codigoComanda;
             StatusComanda = statuscomanda;

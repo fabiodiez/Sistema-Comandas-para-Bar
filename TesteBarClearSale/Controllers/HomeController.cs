@@ -31,10 +31,10 @@ namespace TesteBarClearSale.Controllers
                     });
                 }
                 var usuarioPadrao   = new Usuario { Username = "fabio", Password = "fabio", Perfil = "atendente" };
-                var produtoAgua     = new Produto { Descricao = "Água", Valor = 70 };
-                var produtoCerveja  = new Produto { Descricao = "Cerveja", Valor = 5 };
-                var produtoSuco     = new Produto { Descricao = "Suco", Valor = 50, LimitePorComanda = 3 };
-                var produtoConhaque    = new Produto { Descricao = "Conhaque", Valor = 20 };
+                var produtoAgua     = new Produto("Água",70,null);
+                var produtoCerveja  = new Produto ("Cerveja",5,null);
+                var produtoSuco     = new Produto ("Suco",50,3);
+                var produtoConhaque    = new Produto("Conhaque",20,null);
 
                 var RequisitoPromo1 = new List<PromocaoRequisito>();
                 RequisitoPromo1.Add(new PromocaoRequisito { ProdutoId = 2, QtdMinima = 1 });
