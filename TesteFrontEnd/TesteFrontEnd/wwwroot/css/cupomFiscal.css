@@ -1,0 +1,84 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+.cupomFiscal {
+    margin-left: 10%;
+    font-family: 'courier new';
+    font-size: 15px;
+}
+
+    .cupomFiscal .wrapper {
+        background-color: #ffc;
+        padding: 10px;
+        width: 320px;
+    }
+
+    .cupomFiscal .ta-center {
+        text-align: center;
+    }
+
+    .cupomFiscal .flex {
+        display: flex;
+    }
+
+    .cupomFiscal .f-d-row {
+        flex-direction: row;
+    }
+
+    .cupomFiscal .f-d-column {
+        flex-direction: column;
+    }
+
+    .cupomFiscal .f-w-wrap {
+        flex-wrap: wrap;
+    }
+
+    .cupomFiscal .f-w-nowrap {
+        flex-wrap: no-wrap;
+    }
+
+    .cupomFiscal .f-jc-center {
+        justify-content: center;
+    }
+
+    .cupomFiscal .f-jc-sb {
+        justify-content: space-between;
+    }
+
+    .cupomFiscal .f-jc-start, .cupomFiscal .f-jc-left {
+        justify-content: flex-start;
+    }
+
+    .cupomFiscal .f-jc-end, .cupomFiscal .f-jc-right {
+        justify-content: flex-end;
+    }
+
+    .cupomFiscal .f-ai-center {
+        align-items: center;
+    }
+
+    .cupomFiscal .f-ai-start, .cupomFiscal .f-ai-left {
+        align-items: flex-start;
+    }
+
+    .cupomFiscal .f-ai-end, .cupomFiscal .f-ai-right {
+        align-items: flex-end;
+    }
+
+    .cupomFiscal .fi-as-center {
+        align-self: center;
+    }
+
+    .cupomFiscal .fi-as-start, .cupomFiscal .fi-as-left {
+        align-self: flex-start;
+    }
+
+    .cupomFiscal .fi-as-end, .cupomFiscal .fi-as-right {
+        align-self: flex-end;
+    }
+
+    .cupomFiscal .fi-g-1 {
+        flex-grow: 1
+    }

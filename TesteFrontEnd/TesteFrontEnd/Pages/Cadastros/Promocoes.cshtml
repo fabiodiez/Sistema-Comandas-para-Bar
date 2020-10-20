@@ -1,0 +1,130 @@
+﻿@page
+@model TesteFrontEnd.Pages.Cadastros.ProdutosModel
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- FORM  -->
+        <div class="col-md-12">
+
+            <form class="form-horizontal" id="promocoes"  onsubmit="return false">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Cadastro de Promoções</legend>
+
+                    <!-- Text input-->
+                    <div class="form-row">
+                        
+                        <div class="col-md-3">
+                            <label class="control-label" for="Titulo">Título <span class="obrigatorio">*</span></label>
+                            <input id="Titulo" name="Titulo" type="text" placeholder="Titulo Promoção" maxlength="30" class="form-control input-md">
+                        </div>
+                                        
+                        <div class="col-md-9">
+                            <label class="control-label" for="Descricao">Descrição <span class="obrigatorio">*</span></label>
+                            <input id="Descricao" name="Descricao" type="text" placeholder="Descrição Promoção" maxlength="100" class="form-control input-md">
+
+                        </div>
+                    </div>
+                    
+                     
+                    <div class="form-row incluir-requisito">
+                        <div class="col-md-12">
+                            <h6>Defina os Requisitos da promoção</h6>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ProdutoId">Produto <span class="obrigatorio">*</span></label>
+                            <select class="form-control" id="ProdutoId">
+                                <option value="0">Selecione um Produto</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="control-label" for="QtdMinima">Qtd. Mínima de Itens <span class="obrigatorio">*</span></label>
+                            <input id="QtdMinima" type="text" placeholder="Digite Qtd." maxlength="5" class="form-control input-md numero">
+                        </div>
+                        <div class="col-md-3" id="div-add">
+                            <label class="col-md-12 control-label" for="btnIncluirRequisito">&nbsp;</label>
+                            <button id="btnIncluirRequisito" name="btnIncluirRequisito" class="col-md-12 btn btn-success float-right"  onclick="incluirRequisito()">Incluir</button>
+                        </div>
+                        <hr>
+
+                        <div class="form-row col-md-12">
+                            <h6>Lista de Requisitos</h6>
+                            <table class="table table-bordered table-condensed table-hover table-white">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Qtd. Mínima</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="listaRequisitos">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                        
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <label for="TipoDesconto">Tipo de Desconto</label>
+                                <select class="form-control" id="TipoDesconto" name="TipoDesconto" onchange="changeDesconto();">
+                                    <option value="0">Desconto no Produto</option>
+                                    <option value="1">Produto Brinde</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-4">
+                                <label for="ProdutoPromocionalId">Produto Promocional <span class="obrigatorio">*</span></label>
+                                <select class="form-control" id="ProdutoPromocionalId" name="ProdutoPromocionalId">
+                                    <option value="0">Selecione um Produto</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="control-label" for="valorDesconto">Valor Desconto</label>
+                                <input id="valorDesconto" name="valorDesconto" type="text" placeholder="Digite o Valor" maxlength="5" class="form-control input-md valor">
+                            </div>
+
+                            <div class="col-md-12 divAddPromocao">
+                                <button id="btnIncluirPromocao" name="btnIncluirPromocao" class="col-md-12 btn btn-success float-right" onclick="adicionarPromocao()">Adicionar Promoção</button>
+                            </div>
+                        </div>
+
+</fieldset>
+            </form>             
+        </div>
+        <div class=col-md-12>
+            <hr>
+        </div>
+        <!-- LIST -->
+        <div class=col-md-12>
+
+            <h6>Promoções Cadastradas</h6>
+
+
+            <table class="table table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Titulo</td>
+                        <td>Descricao</td>
+                        <th>Ação</th>
+                    </tr>
+
+                </thead>
+                <tbody id="listaPromocoes">
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<script src="~/js/functions/promocoes.js"></script>
+<script type="text/javascript">
+
+</script>

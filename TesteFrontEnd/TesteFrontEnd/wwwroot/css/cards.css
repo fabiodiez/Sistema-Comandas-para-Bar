@@ -1,0 +1,83 @@
+﻿.card-counter {
+    box-shadow: 2px 2px 10px #DADADA;
+    margin: 5px;
+    padding: 20px 10px;
+    background-color: #fff;
+    height: 100px;
+    border-radius: 5px;
+    transition: .3s linear all;
+    cursor: pointer;
+}
+
+    .card-counter:hover {
+        box-shadow: 4px 4px 20px #DADADA;
+        transition: .3s linear all;
+    }
+
+
+    .card-counter.open {
+        background-color: #896bb6;
+        color: #FFF;
+    }
+
+    .card-counter.closed {
+        background-color: #13002e;
+        color: #FFF;
+    }
+    
+
+    .card-counter .count-numbers {
+        position: absolute;
+        right: 35px;
+        top: 20px;
+        font-size: 32px;
+        display: block;
+    }
+    .card-counter .count-fechada {
+        top: 5px;
+        position: absolute;
+        font-weight: bold;
+    }
+
+    .card-counter .count-name {
+        
+        right: 35px;
+        top: 65px;
+        font-style: italic;
+        text-transform: capitalize;
+        opacity: 0.5;
+        display: block;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+    .card-counter .count-total {
+        position: absolute;
+        right: 35px;
+        top: 65px;
+        font-size: 22px;
+        display: block;
+    }
+
+.btn-outline-info {
+    color: #896bb6 !important;
+    border-color: #896bb6 !important;
+}
+.btn-outline-info:hover {
+    color: white !important;
+    background-color: #896bb6 !important;
+}
+
+
+.btn-outline-secondary {
+    color: #13002e !important;
+    border-color: #13002e !important;
+}
+
+.btn-outline-secondary:hover {
+    color: white !important;
+    background-color: #13002e !important;
+}
+.subTotal {
+    float: right;
+    padding-right: 20px;
+}

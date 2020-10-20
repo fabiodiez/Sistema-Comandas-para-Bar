@@ -1,0 +1,242 @@
+﻿@page
+@model TesteFrontEnd.Pages.Cadastros.ComandasModel
+@{
+    ViewData["Title"] = "Comandas";
+}
+
+
+<div class="container">
+    <div class="row">
+        <!-- FORM  -->
+        <div class="col-md-12">
+            <fieldset>
+
+                <!-- Form Name -->
+                <legend>Comandas</legend>
+
+                <!-- Text input-->
+                <div class="form-row">
+                    <div class="col-md-3" id="div-add">
+                        <button id="btn-add" name="btn-add" class="col-md-12  btn btn-outline-warning float-right" onclick="modalAbrirComanda()" style="font-weight: bold;line-height: 65px;">
+                            ABRIR COMANDA
+                        </button>
+                    </div>
+                    <div class="col-md-3" id="div-add">
+                        <button id="btn-add" name="btn-add" class="col-md-12  btn btn-outline-info float-right " onclick="exibirComandas(0)" style="font-weight: bold;line-height: 65px;">
+                            VER COMANDAS ABERTAS
+                        </button>
+                    </div>
+                    <div class="col-md-3" id="div-add">
+                        <button id="btn-add" name="btn-add" class="col-md-12  btn btn-outline-secondary float-right " onclick="exibirComandas(1)" style="font-weight: bold;line-height: 65px;">
+                            VER COMANDAS FECHADAS
+                        </button>
+                    </div>
+                    <div class="col-md-3" id="div-add">
+                        <button id="btn-add" name="btn-add" class="col-md-12  btn btn-outline-info float-right " onclick="exibirComandas(2)" style="font-weight: bold;line-height: 65px;">
+                            VER TODAS COMANDAS
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <hr>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="container">
+                        <h6>Comandas</h6>
+                        <div class="row lstComandas">
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </fieldset>
+
+        </div>
+        <div class=col-md-12>
+            <hr>
+        </div>
+        <!-- MODAIS-->
+        <!-- Modal abrirComanda -->
+        <div class="modal fade" id="abrirComanda" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="abrirComandaTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalComandaTitle">Abrir Comanda</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                                <label class="control-label" for="codigoComanda">Comanda</label>
+                                <input id="codigoComanda" name="codigoComanda" type="text" placeholder="Ex.: 9999" maxlength="30" class="form-control input-md numero">
+                                <input type="hidden" id="detalheComandaId" value="0">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="ProdutoId">Produto <span class="obrigatorio">*</span></label>
+                                <select class="form-control" id="ProdutoId" onchange="selecionaProduto();">
+                                    <option value="0">Selecione um Produto</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label" for="ValorUnit">Valor Unit.</label>
+                                <input id="ValorUnit" name="ValorUnit" disabled placeholder="R$ 0,00" type="text" class="form-control input-md">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label" for="Qtd">Qtd</label>
+                                <input id="Qtd" name="Qtd" type="text" onkeyup="atualizaValor();" value="1" maxlength="30" class="form-control input-md numero">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="control-label" for="totalItem">Total Item</label>
+                                <input id="totalItem" name="totalItem" type="text" placeholder="R$ 0,00" disabled maxlength="30" class="form-control input-md">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row col-md-12">
+                        <button type="button" id="btn-incluirProduto" class="col-md-12 btn btn-outline-success" onclick="incluirProduto()" style="display: block; margin-bottom: 10px;">
+                            Adicionar Produto
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="btn-abrirComanda" class="btn btn-outline-info" onclick="abrirComanda()">Abrir Comanda</button>
+                        <button type="button" id="btn-resetarComanda" class="btn btn-outline-danger float-left" onclick="resetarComanda()">Resetar Comanda</button>
+                        <button type="button" id="btn-fecharComanda" class="btn btn-outline-info float-right" onclick="fecharComanda()">Fechar Comanda</button>
+                    </div>
+                    <div class="divProdutos form-row col-md-12">
+                        <h6>Produtos da Comanda</h6>
+                        <table class="table table-bordered table-condensed table-hover">
+                            <thead>
+                                <tr>
+                                    <td>Id</td>
+                                    <td>Descricao</td>
+                                    <th>Valor Unit</th>
+                                    <th>Qtd.</th>
+                                    <th>Valor Total</th>
+                                </tr>
+
+                            </thead>
+                            <tbody id="listaProdutos">
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="form-group" id="divSubTotal">
+                        <h5 class="subTotal">Subtotal: <span id="subTotal"></span></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal abrirComanda -->
+        <div class="modal fade" id="cupomFiscal" tabindex="-1" role="dialog" data-keyboard="false" aria-labelledby="abrirComandaTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalComandaTitle">Nota Fiscal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cupomFiscal">
+                            <div class="wrapper" id="cupomPrint">
+                                <div class="flex f-d-column f-ai-center " >
+                                    <div id="datahora">20/10/2020 15:33:12</div>
+                                    <div>BAR DO DG</div>
+                                    <div>CUPOM FISCAL ELETRÔNICO - SAT</div>
+                                </div>
+
+                                <div class="ta-center">---------------------------------</div>
+
+                                <div class="flex f-jc-sb">
+                                    <div>#</div>
+                                    <div>|</div>
+                                    <div>DESC</div>
+                                    <div>|</div>
+                                    <div>QTD</div>
+                                    <div>|</div>
+                                    <div>UN</div>
+                                    <div>|</div>
+                                    <div>VL UN R$</div>
+                                    <div>|</div>
+                                    <div>VL TOT R$</div>
+                                </div>
+                                <div class="itens-cupom">
+                                    <div class="item-cupom" style="display: none;">
+                                        <div class=" flex f-jc-sb">
+                                            <div class="itemNumero"></div>
+                                            <div class="descricao"></div>
+                                        </div>
+                                        <div class="flex f-jc-sb">
+                                            <div class="unidade"> </div>
+                                            <div class="valorTotal" class="fi-ai-end">  </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ta-center">---------------------------------</div>
+                                <div class="ta-center">Promoções Aplicadas</div>
+                                
+                                <div class="itens-desconto">
+                                    <div class="item-desconto">
+                                        <div class="flex f-jc-sb " style="display: none;">
+                                            <span class="titulo"></span>
+                                        </div>
+                                        <div class="flex f-jc-sb hide">
+                                            <span class="promocao"></span>
+                                        </div>
+                                        <div class="flex f-jc-sb " >
+                                            <span class="desconto"></span>
+                                        </div>
+                                        <div class="ta-center">.................................</div>
+
+                                    </div>
+                                </div>
+                                <div class="ta-center">---------------------------------</div>
+
+                                <div class="flex f-jc-sb">
+                                    <span>SUBTOTAL</span>
+                                    <span class="sub-total"></span>
+                                </div>
+
+                                <div class=" flex f-jc-sb">
+                                    <span>TOTAL DESCONTOS</span>
+                                    <span class="total-descontos"></span>
+                                </div>
+
+                                <div class="flex f-jc-sb">
+                                    <span>VALOR FINAL</span>
+                                    <span class="valor-final"></span>
+                                </div>
+
+                            </div>
+                            </div>
+                    </div>
+                    
+                    <div class="modal-footer">                                               
+                        <button type="button" id="btnImprimir" class="btn btn-outline-info float-right" >Imprimir</button>
+                    </div>
+                     
+                     
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<script src="~/js/functions/comandas.js"></script>
+<script src="~/lib/jquery/dist/html2canvas.js"></script>
+<link rel="stylesheet" href="~/css/cards.css"/>
+<link rel="stylesheet" href="~/css/cupomFiscal.css" />
+<script type="text/javascript">
+
+</script>

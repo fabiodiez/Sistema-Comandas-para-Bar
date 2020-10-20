@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bar do DG</h1>
+</div>
+<div class="align-content-center">
+    <form class="p-4 col-md-6">
+        <div class="form-group">
+            <label for="username">Usuário</label>
+            <input type="email" class="form-control" id="username" placeholder="usuario" value="fabio">
+        </div>
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input type="password" class="form-control" id="password" placeholder="senha" value="fabio">
+        </div>
+
+        <button type="button" class="btn btn-primary" onclick="login()">Logar</button>
+    </form>
+</div>
+
+<script src="~/js/functions/login.js" asp-append-version="true"></script>

@@ -1,0 +1,82 @@
+﻿@page
+@model TesteFrontEnd.Pages.Cadastros.ProdutosModel
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<div class="container">
+    <div class="row">
+        <!-- FORM  -->
+        <div class="col-md-12">
+
+            <form class="form-horizontal" id="produtos"  onsubmit="return false">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Cadastro de Produtos</legend>
+
+                    <!-- Text input-->
+                    <div class="form-row">
+                        <label class="control-label" for="descricao">Descrição <label class="obrigatorio">*</label></label>
+                        <div class="col-md-12">
+                            <input id="descricao" name="descricao" type="text" placeholder="Nome do Produto" maxlength="30" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        
+                        <div class="col-md-6">
+                            <label class="control-label" for="valor">Preço <span class="obrigatorio">*</span></label>
+                            <input id="valor" name="valor" type="text" placeholder="R$ 3,00" maxlength="5" class="form-control input-md valor">
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="control-label" for="limitePorComanda">Limite por Comanda</label>
+                            <input id="limitePorComanda" name="limitePorComanda" type="text" placeholder="(Opcional)" maxlength="4" class="form-control input-md numero">
+                            <span class="aviso">Deixe em branco, para não limitar a quantidade deste item na comanda.</span>
+                        </div>
+                        <div class="col-md-3" id="div-add">
+                            <label class="col-md-12  control-label" for="btn-add">&nbsp;</label>
+                            <button id="btn-add" name="btn-add" class="col-md-12  btn btn-success float-right " onclick="adicionarProduto()">Adicionar Produto</button>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+            <div class="form-group">
+                
+            </div>
+
+        </div>
+        <div class=col-md-12>
+            <hr>
+        </div>
+            <!-- LIST -->
+        <div class=col-md-12>
+
+            <h6>Produtos Cadastrados</h6>
+
+
+            <table class="table table-bordered table-condensed table-hover">
+                <thead>
+                    <tr>
+                        <td>Id</td>
+                        <td>Descricao</td>
+                        <th>Valor</th>
+                        <th>Limite por Comanda</th>
+                        <th>Ação</th>
+                    </tr>
+
+                </thead>
+                <tbody id="listaProdutos">
+                </tbody>
+            </table>
+        </div>
+         
+        </div>
+    </div>
+
+<script src="~/js/functions/produtos.js"></script>
+<script type="text/javascript">
+
+</script>
