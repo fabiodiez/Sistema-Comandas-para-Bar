@@ -41,7 +41,7 @@ senha: fabio
 ```
 
 ###### Banco de Dados
-- Banco de dados .mdf encontra-se na pasta Banco de Dados, na raiz do projeto.
+- Arquivo de Banco de dados .mdf encontra-se na pasta Banco de Dados, na raiz do projeto.
 - Caso necessário, Criar um Banco LocalDB MSSQL com o comando abaixo:
 ```sql
 create database TesteClearSale;
