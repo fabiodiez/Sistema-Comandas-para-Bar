@@ -8,7 +8,7 @@ Abaixo algumas informações importantes de Decisões tomadas no projeto:
 - Documentação API (Swagger): http://localhost:5000/swagger
 - Todo o sistema está parametrizado, até mesmo a opção de promoções foi criada uma solução para criar promoções que seja independente da número de produtos e quantidade de itens;
 - Autentitação da Api: Foi utilizado JWT (JSON Web Token), no projeto foi implementado, Autenticação e também Autorização;
-- Resiliência da API, Eu nunca havia implementado isso antes, fiz algumas pesquisas e deparei com a Biblioteca Polly que parece ser uma boa alternativa, como só tive tempo de desenvolver o projeto nas horas vagas, não consegui concluir essa etapa;
+- Resiliência da API, Biblioteca Polly;
 - Interface Web: Foi Criada Usando um Projeto de Aplicativo Web do .Net Core, mas ele foi todo escrito com (HTML / JS / CSS);
 
 ####  Possíveis pontos de evolução.
