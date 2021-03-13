@@ -1,5 +1,4 @@
 # Sistema de Comandas para Bar (Teste Didático)
-### Teste da Empresa ClearSale
 
 Abaixo algumas informações importantes de Decisões tomadas no projeto:
 
