@@ -1,9 +1,5 @@
-# Teste Dg Bar
+# Sistema de Comandas para Bar (Teste Didático)
 ### Teste da Empresa ClearSale
- 
- 
-
-Primeiramente gostaria de agradecer a oportunidade de participar deste processo seletivo.
 
 Abaixo algumas informações importantes de Decisões tomadas no projeto:
 
